@@ -1,90 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Zyno Lookalike Landing Page</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  </head>
-  <body class="bg-gray-50 text-gray-800 font-sans">
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zyno Lookalike</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
 
-    <!-- Navbar -->
-    <header class="bg-white shadow-md">
-      <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <div class="text-xl font-bold text-blue-600">Zynotype</div>
-        <nav class="space-x-6 hidden md:block">
-          <a href="#" class="text-gray-700 hover:text-blue-600">Features</a>
-          <a href="#" class="text-gray-700 hover:text-blue-600">Pricing</a>
-          <a href="#" class="text-gray-700 hover:text-blue-600">Customers</a>
-          <a href="#" class="text-gray-700 hover:text-blue-600">Docs</a>
-        </nav>
-        <div class="hidden md:flex space-x-4">
-          <a href="#" class="text-sm text-gray-600 hover:text-gray-900">Login</a>
-          <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-sm">Sign Up</a>
-        </div>
-      </div>
-    </header>
+    .logo-text {
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: 0.2em;
+      font-size: 4rem;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-blue-100 via-white to-blue-200">
 
-    <!-- Hero -->
-    <section class="bg-white py-20">
-      <div class="max-w-6xl mx-auto px-6 text-center">
-        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Understand What Your Customers Are Really Saying</h1>
-        <p class="text-lg text-gray-600 mb-8">Zynotype helps you mine messages from real users to craft high-converting copy and messaging frameworks that work.</p>
-        <a href="#" class="bg-blue-600 text-white px-6 py-3 rounded-lg text-lg hover:bg-blue-700 transition">Start for Free</a>
-      </div>
-    </section>
+  <!-- Light Mode Section -->
+  <section class="min-h-screen bg-gray-100 rounded-xl shadow-xl mx-auto max-w-5xl mt-10 p-6">
+    <!-- Navigation -->
+    <nav class="flex justify-between items-center py-4">
+      <div class="text-lg font-semibold">Zyno</div>
+      <ul class="flex space-x-6 items-center">
+        <li><a href="#" class="text-gray-700 font-medium px-3 py-1 rounded-full bg-white shadow">Home</a></li>
+        <li><a href="#" class="text-gray-500 hover:text-gray-800">Features</a></li>
+        <li><a href="#" class="text-gray-500 hover:text-gray-800">Specs</a></li>
+        <li><button class="w-6 h-6 bg-gray-300 rounded-full flex items-center justify-center">☀️</button></li>
+      </ul>
+    </nav>
 
-    <!-- Features -->
-    <section class="bg-gray-100 py-20">
-      <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-12 text-center">
-        <div>
-          <img src="https://placehold.co/100x100" class="mx-auto mb-4" alt="Feature 1">
-          <h3 class="text-xl font-semibold mb-2">Message Mining</h3>
-          <p class="text-gray-600">Easily extract voice-of-customer insights from surveys, reviews, and interviews.</p>
-        </div>
-        <div>
-          <img src="https://placehold.co/100x100" class="mx-auto mb-4" alt="Feature 2">
-          <h3 class="text-xl font-semibold mb-2">Value Proposition Builder</h3>
-          <p class="text-gray-600">Automatically craft tested UVPs based on what your best customers say they love.</p>
-        </div>
-        <div>
-          <img src="https://placehold.co/100x100" class="mx-auto mb-4" alt="Feature 3">
-          <h3 class="text-xl font-semibold mb-2">Sales Page Generator</h3>
-          <p class="text-gray-600">Convert insights into full-page copy optimized to persuade and convert.</p>
-        </div>
-      </div>
-    </section>
+    <!-- Logo -->
+    <div class="text-center mt-20 mb-12">
+      <h1 class="logo-text text-gray-800 tracking-widest">Z Y N O</h1>
+    </div>
 
-    <!-- Testimonials -->
-    <section class="py-20 bg-white">
-      <div class="max-w-4xl mx-auto px-6 text-center">
-        <h2 class="text-3xl font-bold mb-10">What Our Users Say</h2>
-        <div class="grid md:grid-cols-2 gap-8">
-          <div class="bg-gray-100 p-6 rounded shadow">
-            <p class="text-gray-700 italic mb-4">“Zynotype changed how we write copy. Our landing page conversions jumped by 47%!”</p>
-            <p class="font-semibold">– Alex G., SaaS Founder</p>
-          </div>
-          <div class="bg-gray-100 p-6 rounded shadow">
-            <p class="text-gray-700 italic mb-4">“I love how easy it is to find real customer insights. It’s like magic!”</p>
-            <p class="font-semibold">– Sarah P., UX Researcher</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- Subtitle -->
+    <p class="text-center text-gray-600 text-lg mb-10">Everything in One Place</p>
 
-    <!-- CTA -->
-    <section class="bg-blue-600 text-white py-16 text-center">
-      <div class="max-w-3xl mx-auto px-6">
-        <h2 class="text-3xl font-bold mb-4">Stop Guessing. Start Listening.</h2>
-        <p class="text-lg mb-8">Join hundreds of founders, marketers, and copywriters using Zynotype to turn customer voice into conversions.</p>
-        <a href="#" class="bg-white text-blue-600 font-semibold px-6 py-3 rounded-lg hover:bg-gray-100">Get Started Now</a>
-      </div>
-    </section>
+    <!-- Buttons -->
+    <div class="flex justify-center space-x-6">
+      <a href="#" class="bg-gray-700 text-white px-6 py-2 rounded hover:bg-gray-900 transition">Download Demo</a>
+      <a href="#" class="bg-gray-300 text-gray-800 px-6 py-2 rounded hover:bg-gray-400 transition">Learn More</a>
+    </div>
 
-    <!-- Footer -->
-    <footer class="bg-gray-100 py-6 text-center text-sm text-gray-500">
-      © 2025 Zynotype. All rights reserved.
-    </footer>
+    <p class="text-center text-sm text-gray-500 mt-6">7-day trial</p>
+  </section>
 
-  </body>
+  <!-- Dark Mode Section -->
+  <section class="min-h-screen bg-black text-white rounded-xl shadow-xl mx-auto max-w-5xl mt-20 p-6 relative overflow-hidden">
+    <!-- Glowing Ring Effect -->
+    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-72 bg-gradient-to-b from-white/30 to-transparent rounded-full blur-3xl"></div>
+
+    <!-- Navigation -->
+    <nav class="flex justify-between items-center py-4 relative z-10">
+      <div class="text-lg font-semibold">Zyno</div>
+      <ul class="flex space-x-6 items-center">
+        <li><a href="#" class="text-white font-medium px-3 py-1 rounded-full bg-white/20">Home</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-white">Features</a></li>
+        <li><a href="#" class="text-gray-300 hover:text-white">Specs</a></li>
+        <li><button class="w-6 h-6 bg-gray-600 rounded-full flex items-center justify-center">🌙</button></li>
+      </ul>
+    </nav>
+
+    <!-- Logo -->
+    <div class="text-center mt-32 mb-10 relative z-10">
+      <h1 class="logo-text text-white tracking-widest">Z Y N O</h1>
+    </div>
+  </section>
+
+</body>
 </html>
