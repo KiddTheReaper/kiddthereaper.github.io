@@ -1,76 +1,73 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Zyno Lookalike</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
 
     body {
-      margin: 0;
       font-family: 'Orbitron', sans-serif;
+      margin: 0;
       background-color: #000;
-      overflow-x: hidden;
+      color: white;
+      overflow: hidden;
     }
 
-    .arc-bg::before {
+    .neon-glow::before {
       content: '';
       position: absolute;
-      top: -40%;
+      top: -30%;
       left: 50%;
       transform: translateX(-50%);
-      width: 200vw;
-      height: 200vw;
-      background: radial-gradient(ellipse at center, rgba(59,130,246,0.8) 10%, transparent 60%);
+      width: 250%;
+      height: 250%;
+      background: radial-gradient(ellipse at center, #ffffffaa 0%, #3b82f6 20%, transparent 70%);
       border-radius: 50%;
       z-index: 0;
-      filter: blur(140px);
+      filter: blur(100px);
       pointer-events: none;
     }
 
-    .glass {
-      backdrop-filter: blur(12px);
-      background-color: rgba(255, 255, 255, 0.06);
+    .glass-nav {
+      backdrop-filter: blur(16px);
+      background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .active-link {
-      background-color: white;
-      color: black;
+    .logo-text {
+      font-size: clamp(2rem, 10vw, 8rem);
+      letter-spacing: 1.2rem;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    @media (max-width: 640px) {
+      .logo-text {
+        letter-spacing: 0.6rem;
+      }
     }
   </style>
 </head>
-<body class="relative arc-bg min-h-screen flex items-center justify-center text-white">
+<body class="relative min-h-screen flex flex-col items-center justify-center neon-glow">
 
-  <!-- Sticky Glassmorphism Navbar -->
-  <header class="fixed top-4 left-1/2 transform -translate-x-1/2 w-[90%] max-w-6xl z-50">
-    <nav class="glass flex justify-between items-center px-6 py-3 rounded-full shadow-lg">
-      <div class="text-sm tracking-wide">ZYRO</div>
-      <ul class="flex space-x-4 text-sm">
-        <li><a href="#" class="nav-link active-link px-4 py-1 rounded-full">Home</a></li>
-        <li><a href="#" class="nav-link px-4 py-1 rounded-full hover:bg-white/10">Features</a></li>
-        <li><a href="#" class="nav-link px-4 py-1 rounded-full hover:bg-white/10">Specs</a></li>
-      </ul>
-      <div class="w-6 h-6 bg-white/10 rounded-full flex items-center justify-center cursor-pointer">☰</div>
+  <!-- Navbar -->
+  <header class="fixed top-4 w-[90%] max-w-6xl z-50 glass-nav rounded-full px-6 py-3 flex justify-between items-center">
+    <div class="text-sm tracking-widest text-white">ZYRO</div>
+    <nav class="flex gap-6 text-sm">
+      <a href="#" class="bg-white text-black rounded-full px-4 py-1">Home</a>
+      <a href="#" class="text-white hover:text-gray-300">Features</a>
+      <a href="#" class="text-white hover:text-gray-300">Specs</a>
     </nav>
+    <div class="w-6 h-6 bg-white/10 rounded-full flex items-center justify-center text-white text-sm">☰</div>
   </header>
 
-  <!-- Main ZYNO Logo -->
-  <main class="z-10 text-center px-4 mt-20">
-    <h1 class="text-white text-[12vw] sm:text-[6vw] font-bold tracking-widest">Z Y N O</h1>
+  <!-- Main Heading -->
+  <main class="z-10 flex flex-col justify-center items-center h-screen text-white">
+    <h1 class="logo-text z-10">Z Y N O</h1>
   </main>
 
-  <script>
-    // JS for navbar active state (optional enhancement)
-    const navLinks = document.querySelectorAll('.nav-link');
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.forEach(l => l.classList.remove('active-link'));
-        link.classList.add('active-link');
-      });
-    });
-  </script>
 </body>
 </html>
