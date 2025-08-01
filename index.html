@@ -2,72 +2,75 @@
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Zyno Lookalike</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
 
-    .logo-text {
+    body {
+      margin: 0;
       font-family: 'Orbitron', sans-serif;
-      letter-spacing: 0.2em;
-      font-size: 4rem;
+      background-color: #000;
+      overflow-x: hidden;
+    }
+
+    .arc-bg::before {
+      content: '';
+      position: absolute;
+      top: -40%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200vw;
+      height: 200vw;
+      background: radial-gradient(ellipse at center, rgba(59,130,246,0.8) 10%, transparent 60%);
+      border-radius: 50%;
+      z-index: 0;
+      filter: blur(140px);
+      pointer-events: none;
+    }
+
+    .glass {
+      backdrop-filter: blur(12px);
+      background-color: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .active-link {
+      background-color: white;
+      color: black;
     }
   </style>
 </head>
-<body class="bg-gradient-to-b from-blue-100 via-white to-blue-200">
+<body class="relative arc-bg min-h-screen flex items-center justify-center text-white">
 
-  <!-- Light Mode Section -->
-  <section class="min-h-screen bg-gray-100 rounded-xl shadow-xl mx-auto max-w-5xl mt-10 p-6">
-    <!-- Navigation -->
-    <nav class="flex justify-between items-center py-4">
-      <div class="text-lg font-semibold">Zyno</div>
-      <ul class="flex space-x-6 items-center">
-        <li><a href="#" class="text-gray-700 font-medium px-3 py-1 rounded-full bg-white shadow">Home</a></li>
-        <li><a href="#" class="text-gray-500 hover:text-gray-800">Features</a></li>
-        <li><a href="#" class="text-gray-500 hover:text-gray-800">Specs</a></li>
-        <li><button class="w-6 h-6 bg-gray-300 rounded-full flex items-center justify-center">☀️</button></li>
+  <!-- Sticky Glassmorphism Navbar -->
+  <header class="fixed top-4 left-1/2 transform -translate-x-1/2 w-[90%] max-w-6xl z-50">
+    <nav class="glass flex justify-between items-center px-6 py-3 rounded-full shadow-lg">
+      <div class="text-sm tracking-wide">ZYRO</div>
+      <ul class="flex space-x-4 text-sm">
+        <li><a href="#" class="nav-link active-link px-4 py-1 rounded-full">Home</a></li>
+        <li><a href="#" class="nav-link px-4 py-1 rounded-full hover:bg-white/10">Features</a></li>
+        <li><a href="#" class="nav-link px-4 py-1 rounded-full hover:bg-white/10">Specs</a></li>
       </ul>
+      <div class="w-6 h-6 bg-white/10 rounded-full flex items-center justify-center cursor-pointer">☰</div>
     </nav>
+  </header>
 
-    <!-- Logo -->
-    <div class="text-center mt-20 mb-12">
-      <h1 class="logo-text text-gray-800 tracking-widest">Z Y N O</h1>
-    </div>
+  <!-- Main ZYNO Logo -->
+  <main class="z-10 text-center px-4 mt-20">
+    <h1 class="text-white text-[12vw] sm:text-[6vw] font-bold tracking-widest">Z Y N O</h1>
+  </main>
 
-    <!-- Subtitle -->
-    <p class="text-center text-gray-600 text-lg mb-10">Everything in One Place</p>
-
-    <!-- Buttons -->
-    <div class="flex justify-center space-x-6">
-      <a href="#" class="bg-gray-700 text-white px-6 py-2 rounded hover:bg-gray-900 transition">Download Demo</a>
-      <a href="#" class="bg-gray-300 text-gray-800 px-6 py-2 rounded hover:bg-gray-400 transition">Learn More</a>
-    </div>
-
-    <p class="text-center text-sm text-gray-500 mt-6">7-day trial</p>
-  </section>
-
-  <!-- Dark Mode Section -->
-  <section class="min-h-screen bg-black text-white rounded-xl shadow-xl mx-auto max-w-5xl mt-20 p-6 relative overflow-hidden">
-    <!-- Glowing Ring Effect -->
-    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-72 bg-gradient-to-b from-white/30 to-transparent rounded-full blur-3xl"></div>
-
-    <!-- Navigation -->
-    <nav class="flex justify-between items-center py-4 relative z-10">
-      <div class="text-lg font-semibold">Zyno</div>
-      <ul class="flex space-x-6 items-center">
-        <li><a href="#" class="text-white font-medium px-3 py-1 rounded-full bg-white/20">Home</a></li>
-        <li><a href="#" class="text-gray-300 hover:text-white">Features</a></li>
-        <li><a href="#" class="text-gray-300 hover:text-white">Specs</a></li>
-        <li><button class="w-6 h-6 bg-gray-600 rounded-full flex items-center justify-center">🌙</button></li>
-      </ul>
-    </nav>
-
-    <!-- Logo -->
-    <div class="text-center mt-32 mb-10 relative z-10">
-      <h1 class="logo-text text-white tracking-widest">Z Y N O</h1>
-    </div>
-  </section>
-
+  <script>
+    // JS for navbar active state (optional enhancement)
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.forEach(l => l.classList.remove('active-link'));
+        link.classList.add('active-link');
+      });
+    });
+  </script>
 </body>
 </html>
